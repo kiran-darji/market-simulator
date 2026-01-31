@@ -1,14 +1,11 @@
-#include <string>
-#include <stdexcept>
+#include "asset.hpp"
 
 class Asset
 {
-private:
     const std::string name;
     const int lot_size;
     const float tick_size;
 
-public:
     Asset(
         const std::string &name,
         const int lot_size,
@@ -19,10 +16,6 @@ public:
             throw std::invalid_argument("Error, invalid argument");
         }
     }
-
-    ~Asset() {}
-
-    Asset(const Asset &other) = default;
 
     const std::string &get_name() const { return name; }
 
